@@ -22,7 +22,7 @@ app.use(cors());
 // Parse JSON bodies
 app.use(express.json());
 
-// API key for authentication
+// API key for authentication using .env file
 const API_KEY = process.env.API_KEY;
 
 // Middleware function to authenticate API requests
