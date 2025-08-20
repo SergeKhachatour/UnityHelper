@@ -133,8 +133,8 @@ app.get('/api/wallet_markers', authenticateToken, async (req, res) => {
 // Health check endpoint
 app.get('/health', (req, res) => {
     logger.info('=== HEALTH CHECK ===');
-    res.status(200).json({ status: 'healthy xxx' });
-  });
+    res.status(200).json({ status: 'healthy' });
+});
   
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
