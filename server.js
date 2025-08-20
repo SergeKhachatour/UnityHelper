@@ -5,6 +5,14 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3001;
 
+// Simple logger used across the app (prints timestamped messages)
+const logger = {
+	info: (...args) => console.log(new Date().toISOString(), '[INFO]', ...args),
+	warn: (...args) => console.warn(new Date().toISOString(), '[WARN]', ...args),
+	error: (...args) => console.error(new Date().toISOString(), '[ERROR]', ...args),
+	debug: (...args) => console.debug(new Date().toISOString(), '[DEBUG]', ...args)
+};
+
 // Most permissive CORS setup (for development only)
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
